@@ -1,0 +1,32 @@
+#include <iostream>
+
+// ONLY IN THIS TASK CODE WRITTEN IN C-STYLE
+
+int main() {
+	int N;
+	std::cin >> N;
+	int* X = new int [N];
+	int A, B;
+	std::cin >> A;
+	std::cin >> B;
+	int k = 0;
+
+	for (int i = 0; i < N; i++) {
+		std::cin >> X[i];
+	}
+	for (int i = 0; i < N; i++) {
+		if (X[i] > 0)
+			X[i] = X[i] * B;
+		else
+			X[i] = X[i] / 2;
+	}
+	for (int i = 0; i < N; i++) {
+		if (abs(X[i]) > A)
+			k++;
+	}
+	for (int i = 0; i < N; i++) {
+		std::cout << X[i] << " ";
+	}
+	delete[] X;
+	std::cout << "\n" << k;
+}
